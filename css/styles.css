@@ -1,0 +1,117 @@
+:root {
+  --background: #bfe8a9;
+  --light: #6db148;
+  --medium: #4e9329;
+  --dark: #2f6e0d;
+  --dark_alt: #ca0005;
+  --transition-duration: 0.2s;
+  --opacity: 0.8;
+  --border_radius: 3px;
+  --padding: 20px;
+}
+
+body {
+  background-color: var(--background);
+  font-weight: 400;
+  color: var(--dark);
+  line-height: 2;
+}
+
+header {
+  text-align: right;
+}
+
+@keyframes color_change {
+  0% {
+    color: var(--background);
+  }
+  25% {
+    color: var(--light);
+  }
+  50% {
+    color: var(--medium);
+  }
+  75% {
+    color: var(--dark);
+  }
+  100% {
+    color: var(--dark);
+  }
+}
+
+.color_change {
+  animation: 4s color_change infinite alternate linear;
+}
+
+main {
+  text-align: center;
+}
+
+h1 {
+  color: var(--dark_alt);
+}
+
+/*footer styling*/
+
+.page-footer {
+  color: var(--medium);
+  clear: both;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 50px;
+}
+
+.social-media {
+  padding: 5px;
+}
+
+.social-media__item {
+  height: 35px;
+  padding: 5px;
+  transition-duration: var(--transition-duration);
+}
+
+.social-media__item:hover {
+  opacity: var(--opacity);
+}
+
+.social-media__item:active {
+  color: var(--dark_orange);
+}
+
+.footer__plumtree-favicon {
+  width: 50px;
+  height: auto;
+  padding: 5px;
+}
+
+/*responsive design*/
+
+@media all and (max-width: 500px) {
+  .grid {
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+  }
+}
+@media all and (min-width: 500px) and (max-width: 750px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media all and (max-width: 750px) {
+  .grid {
+    grid-gap: 10px;
+  }
+  .grid__item:first-child {
+    grid-column: auto / auto;
+    grid-row: auto / auto;
+  }
+  .grid__item:last-child {
+    grid-column: auto / auto;
+    grid-row: auto / auto;
+  }
+  h1 {
+    font-size: 22px;
+  }
+}
