@@ -1,21 +1,41 @@
-alert("What is your planting zone?");
+prompt("What is your planting zone?");
 
 let peaList = [
-  { name: "Zone 4", date: 4.15, types: ["vegetable"] },
-  { name: "Zone 5", date: 4.1, types: ["vegetable"] },
-  { name: "Zone 6", date: 3.15, types: ["vegetable"] },
-  { name: "Zone 7", date: 3.1, types: ["vegetable"] },
-  { name: "Zone 8", date: 2.15, types: ["vegetable"] },
+  { name: "Zone 4", date: "2024-04-15", types: ["vegetable"] },
+  { name: "Zone 5", date: "2024-04-01", types: ["vegetable"] },
+  { name: "Zone 6", date: "2024-03-15", types: ["vegetable"] },
+  { name: "Zone 7", date: "2024-03-01", types: ["vegetable"] },
+  { name: "Zone 8", date: "2024-02-15", types: ["vegetable"] },
 ];
 
-for (let i = 0; i < peaList.length; i++) {
+letPeaRepository = (function () {
+  let peaList = [];
+
+  return {
+    add: function (peaList) {
+      peaList.push(peaList);
+    },
+    getAll: function () {
+      return peaList;
+    },
+  };
+})();
+
+function myLoopFunction(peaList) {
   document.write(
-    peaList[i].name + " (plant date: " + peaList[i].date + ")" + "<br>"
+    "<p>" +
+      peaList.name +
+      " should be planted on " +
+      peaList.date +
+      "." +
+      "</p>"
   );
+
+  if (peaList.date < "2024-03-15") {
+    document.write("Wow, that's early!");
+  } else if (peaList.date > "2024-03-15") {
+    document.write("Wow, that's late!");
+  }
 }
-if (peaList[date] < 3) {
-  document.write("wow, that's early!");
-}
-if (peaList.date > 4) {
-  document.write("wow, that's late!");
-}
+
+peaList.forEach(myLoopFunction);
