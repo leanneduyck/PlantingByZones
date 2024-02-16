@@ -46,6 +46,28 @@ header {
 main {
   text-align: center;
 }
+ul {
+  list-style-type: none;
+}
+
+.button-class {
+  background-color: var(--light);
+  color: var(--background);
+  border: 2px solid var(--dark);
+  padding: 16px 32 px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: var(--transition-duration);
+  cursor: pointer;
+}
+
+.button-class:hover {
+  opacity: var(--opacity);
+  text-decoration: underline;
+}
 
 h1 {
   color: var(--dark_alt);
