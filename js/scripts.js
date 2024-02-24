@@ -1,19 +1,61 @@
-let plantRepository = (function () {
-  let plantList = [];
-  let apiUrl =
-    "https://perenual.com/api/species-list?key=sk-5nx665d38e92daa284244";
+let zoneRepository = function () {
+  let repository = [
+    {
+      name: "Zone 3",
+      imageUrl: "imgPlanting-Zone-3.webp",
+    },
+    {
+      name: "Zone 4",
+      imageUrl: "imgPlanting-Zone-4.webp",
+    },
+    {
+      name: "Zone 5",
+      imageUrl: "imgPlanting-Zone-5.webp",
+    },
+    {
+      name: "Zone 6",
+      imageUrl: "imgPlanting-Zone-6.webp",
+    },
+    {
+      name: "Zone 7",
+      imageUrl: "imgPlanting-Zone-7.webp",
+    },
+    {
+      name: "Zone 8",
+      imageUrl: "imgPlanting-Zone-8.webp",
+    },
+    {
+      name: "Zone 9",
+      imageUrl: "imgPlanting-Zone-9.webp",
+    },
+  ];
 
-  function add(plant) {
-    if (tyepof(plant) === "object" && "name" in plant) {
-      plantList.push(plant);
-    } else {
-      console.log("information is unavailable");
+  // zone hardiness API code it said to copy here
+  const data = null;
+
+  const xhr = new XMLHttpRequest();
+  xhr.withCredentials = true;
+
+  xhr.addEventListener("readystatechange", function () {
+    if (this.readyState === this.DONE) {
+      console.log(this.responseText);
     }
-  }
+  });
 
-  function getAll() {
-    return plantList;
-  }
+  xhr.open("GET", "https://plant-hardiness-zone.p.rapidapi.com/zipcodes/90210");
+  xhr.setRequestHeader(
+    "X-RapidAPI-Key",
+    "32d2962646msh8f4052ed0227429p1b357ejsn66e28a448638"
+  );
+  xhr.setRequestHeader(
+    "X-RapidAPI-Host",
+    "plant-hardiness-zone.p.rapidapi.com"
+  );
+
+  xhr.send(data);
+  // end of API copied code
+
+  //I am not sure how to call this kind of API, but it would go here
 
   function showLoadingMessage() {
     document.getElementById("loading_message").style.display = "block";
@@ -23,102 +65,93 @@ let plantRepository = (function () {
     document.getElementById("loading_message").style.display = "none";
   }
 
-  function addListItem(plant) {
-    let plantList = document.querySelector(".plant-list");
-    let listplant = document.createElement("li");
+  //adding js
+  function getAll() {
+    return repository;
+  }
+
+  function addListItem(zone) {
+    let zoneList = document.querySelector(".zone-list");
+    let listzone = document.createElement("li");
     let button = document.createElement("div");
-    button.innerText = plant.commonName;
-    button.classList.add("button-class");
+    button.innerText = repository.name;
+    button.classList.add("button");
 
-    let plantContainer = document.createElement("div");
-    let plantImage = document.createElement("img");
-    plantImage.src = plant.image?.thumbnail || "https://placehold.it/300x300";
-    plantContainer.appendChild(plantImage);
-    button.appendChild(plantContainer);
+    let zoneContainer = document.createElement("div");
+    let zoneImage = document.createElement("img");
+    zoneImage.src - repository.imageUrl;
+    zoneContainer.appendChild(zoneImage);
+    button.appendChild(zoneContainer);
 
-    listplant.appendChild(button);
-    plantList.appendChild(listplant);
+    listzone.appendChild(button);
+    zoneList.appendChild(listzone);
     button.addEventListener("click", function () {
-      showDetails(plant);
+      showDetails(zone);
     });
   }
 
-  function loadList() {
-    showLoadingMessage();
-    return fetch(apiUrl)
-      .then(function (response) {
-        return response.json();
-      })
-      .then(function (json) {
-        hideLoadingMessage();
-        json.data.forEach(function (res) {
-          let plant = {
-            id: res.id,
-            name: res.other_name,
-            image: res.default_image,
-            commonName: res.common_name,
-            cycle: res.cycle,
-            watering: res.watering,
-          };
-          add(plant);
-        });
-      })
-      .catch(function (e) {
-        hideLoadingMessage();
-        console.error(e);
-      });
+  // modal
+  function showDetails(zone) {
+    let modalContainer = document.querySelector("#modal-container");
+    function showModal(title, text) {
+      modalContainer.innerHTML = "";
+
+      let modal = document.createElement("div");
+        modal.classList.add("modal");
+
+      let closeButtonElement = document.createElement("button");
+        closeButtonElement.classList.add("modal-close");
+        closeButtonElement.innerText = "Close";
+        closeButtonElement.addEventListener("click", hideModal);
+
+      let titleElement = document.createElement("h1");
+        titleElement.innerText = title;
+      let contentElement = document.createElement("p");
+        contentElement.innerText = text;
+
+      modal.appendChild(closeButtonElement);
+      modal.appendChild(titleElement);
+      modal.appendChild(contentElement);
+      modalContainer.appendChild(modal);
+
+      modalContainer.classList.add("is-visible");
+
+    modalContainer.addEventListener("click", (e) => {
+      let target = e.target;
+      if (target === modalContainer) {
+        hideModal();
+      }
+    });
   }
 
-  function showDetails(plant) {
+   function hideModal() {
+      let modalContainer = document.querySelector("#modal-container");
+      modalContainer.classList.remove("is-visible");
+    }
+    window.addEventListener("keydown", (e) => {
+      let modalContainer = document.querySelector("#modal-container");
+      if (e.key === "Escape" && modalContainer.classList.contains("is-visible")){
+      hideModal();
+      }
+    });
 
-    let modalContainer = document.querySelector('#modal-container');
-    function showModal(title, text) {
-        modalContainer.innerHTML = '';
-        let modal = document.createElement('div');
-            modal.classList.add('modal');
-        let closeButtonElement = document.createElement('button');
-            closeButtonElement.classList.add('modal-close');
-            closeButtonElement.innerText = 'Close';
-            closeButtonElement.addEventListener('click', hideModal);
-        let titleElement = document.createElement('h1');
-            titleElement.innerText = title;
-            let contentElement = document.createElement('p');
-            contentElement.innerText = text;
-    modal.appendChild(closeButtonElement);
-    modal.appendChild(titleElement);
-    modal.appendChild(contentElement);
-    modalContainer.appendChild(modal);
-    modalContainer.classList.add('is-visible');
-    }
-    function hideModal() {
-        modalContainer.classList.remove('is-visible');
-    }
-    window.addEventListener('keydown', (e) => {
-        hideModal();
-    }
- });
+    document.querySelector("#show-modal").addEventListener("click", () => {
+      showModal("Modal title", "Modal content");
+    });
+  }
+};
+// end modal
 
- modalContainer.addEventListener('click', (e) => {
-    let target = e.target;
-    if (target === modalContainer) {
-        hideModal();
-    }
- });
+// call js once figure out API
 
- document.querySelector('#show-modal').addEventListener('click', => {
-    showModal('Modal title', 'Modal content');
- });
+return {
+  getAll: getAll,
+  addListItem: addListItem,
+};
 })();
 
-  return {
-    getAll: getAll,
-    addListItem: addListItem,
-    loadList: loadList,
-  };
-})();
-
-plantRepository.loadList().then(function () {
-  plantRepository.getAll().forEach(function (plant) {
-    plantRepository.addListItem(plant);
+zoneRepository.loadList().then(function () {
+  zoneRepository.getAll().forEach(function (zone) {
+    zoneRepository.addListItem(zone);
+  }
   });
-});

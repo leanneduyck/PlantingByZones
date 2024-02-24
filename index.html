@@ -1,3 +1,5 @@
+<!-- HTML for JS2 with original API and code we've been creating in this course
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -23,9 +25,120 @@
         alt="loading message"
       />
       <ul class="plant-list">
-        <div class="modal-container"></div>
+        <div id="modal-container">
+          <div class="modal">
+            <button class="modal-close">Close</button>
+            <h1>Modal Title</h1>
+            <p>Modal Text</p>
+          </div>
+        </div>
       </ul>
-      <script src="js\script.js"></script>
+      <script src="js\script2.js"></script>
+      <link id="loading_message" href="img\loading.gif" alt="loading message" />
+    </main>
+    <footer class="page-footer">
+      find me on:
+      <div class="social-media">
+        <a
+          href="https://github.com/leanneduyck"
+          target="_blank"
+          class="social-media__item"
+        >
+          <img
+            src="img\github-icon.png"
+            alt="github icon"
+            class="social-media__item"
+          />
+        </a>
+        <a
+          href="https://instagram.com/leanne_duyck/"
+          target="_blank"
+          class="social-media__item"
+        >
+          <img
+            src="img\instagram-icon.png"
+            alt="instagram icon"
+            class="social-media__item"
+          />
+        </a>
+        <a
+          href="https://linkedin.com/in/leanne-duyck-14b8702ab/"
+          target="_blank"
+          class="social-media__item"
+        >
+          <img
+            src="img\linkedin-icon.png"
+            alt="linkedin icon"
+            class="social-media__item"
+          />
+        </a>
+      </div>
+      <div>designed and developed by:</div>
+      <div>Leanne Duyck</div>
+      <div>
+        <img
+          src="img\favicon.svg"
+          alt="plumtree image"
+          class="footer__plumtree-favicon"
+        />
+      </div>
+    </footer>
+  </body>
+</html>
+-->
+
+<!--HTML for JS1, trying to use new API-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="reset" type="reset" href="css\reset.css" />
+    <link rel="stylesheet" href="css\styles.css" />
+    <title>Planting by Zones</title>
+    <link
+      rel="shortcut icon"
+      href="img\seedling-favicon.png"
+      alt="seedling favicon"
+    />
+  </head>
+  <body>
+    <header class="color_change">Planting by Zones</header>
+    <main>
+      <h1>
+        When you plant your garden depends on your <em>hardiness zone</em>!
+      </h1>
+      <h2 class="enter_left">What is your hardiness zone?</h2>
+      <h2 class="enter_left">Enter your <em>zipcode</em> to find out:</h2>
+
+      <!--API connection would go here to enter zipcode and find zone #-->
+
+      <!--loading gif-->
+      <img
+        id="loading_message"
+        src="./img/loading.gif"
+        height="40"
+        alt="loading message"
+      />
+      <!--list of zones to be clicked, modal opens with planting chart-->
+      <ul class="zone-list">
+        <li class="button">Zone 3</li>
+        <li class="button">Zone 4</li>
+        <li class="button">Zone 5</li>
+        <li class="button">Zone 6</li>
+        <li class="button">Zone 7</li>
+        <li class="button">Zone 8</li>
+        <li class="button">Zone 9</li>
+        <div id="modal-container">
+          <div class="modal">
+            <button class="modal-close">Close</button>
+            <h1>Modal Title</h1>
+            <p>Modal Text and/or Image</p>
+          </div>
+        </div>
+      </ul>
+      <script src="js\scripts.js"></script>
       <link id="loading_message" href="img\loading.gif" alt="loading message" />
     </main>
     <footer class="page-footer">
