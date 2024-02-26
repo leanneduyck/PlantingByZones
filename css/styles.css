@@ -21,6 +21,14 @@ header {
   text-align: right;
 }
 
+.hide {
+  display: none !important;
+}
+
+.show {
+  display: block !important;
+}
+
 @keyframes color_change {
   0% {
     color: var(--background);
@@ -62,10 +70,6 @@ main {
   animation: ease-in-out 2s enter_left 1 forwards;
 }
 
-ul {
-  list-style-type: none;
-}
-
 .button {
   display: block;
   background-color: var(--light);
@@ -85,6 +89,7 @@ ul {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  list-style-type: none;
 }
 
 .button:hover {
@@ -98,23 +103,21 @@ h1 {
   color: var(--dark_alt);
 }
 
-/*modal styling*/
-#modal-container {
-  position: fixed;
-  padding: 20px;
-  box-sizing: border-box;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba (0, 0, 0, 0.5);
-  z-index: 999;
-  overflow: auto;
-  display: grid;
-  text-align: center;
+.zone-image {
+  display: none;
 }
 
+/*modal styling*/
+
 .modal {
+  display: none;
+  position: fixed;
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 20%; /* Full width */
+  height: 20%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
   margin: auto;
   display: inline-block;
   box-sizing: border-box;
@@ -135,6 +138,7 @@ h1 {
   color: var(--dark_alt);
   font-weight: bold;
   border-radius: 4px;
+  cursor: pointer;
 }
 
 .modal-close:hover {
@@ -144,6 +148,14 @@ h1 {
   transition-duration: var(--transition-duration);
 }
 
+.modal-close:focus {
+  outline: none;
+}
+
+.modal-close:active {
+  color: var(--dark_orange);
+}
+
 .modal h1 {
   margin-top: 0;
   color: var(--background);
@@ -151,22 +163,7 @@ h1 {
 
 .modal p {
   margin-bottom: 0;
-}
-
-#modal-container.is-visible {
-  display: block;
-  position: fixed;
-  padding: 20px;
-  box-sizing: border-box;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba (0, 0, 0, 0.5);
-  z-index: 999;
-  overflow: auto;
-  display: grid;
-  text-align: center;
+  color: white;
 }
 
 /*footer styling*/
