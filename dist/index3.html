@@ -1,100 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
+
+    <!-- favicon -->
+    <link
+      rel="shortcut icon"
+      href="img\seedling-favicon.png"
+      alt="seedling favicon"
+    />
+
+    <title>Planting by Zones</title>
+  </head>
   <div class="p-3 mb-2 bg-secondary text-white">
-    <head>
-      <!-- meta tags -->
-      <meta charset="utf-8" />
-      <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1, shrink-to-fit=no"
-      />
-
-      <!-- Bootstrap CSS -->
-      <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/css/bootstrap.min.css"
-        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-        crossorigin="anonymous"
-      />
-
-      <!-- favicon -->
-      <link
-        rel="shortcut icon"
-        href="dist\img\seedling-favicon.png"
-        alt="seedling favicon"
-      />
-
-      <!-- nav bar-->
-      <nav class="navbar navbar-light bg-success">
-        <a class="navbar-brand">
-          <img
-            src="img\seedling-favicon.png"
-            width="30"
-            height="30"
-            class="d-inline-block align-top"
-            alt="seedling image"
-          />
-          Planting by Zones</a
-        >
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link text-white" href="index4.html"
-                >Home<span class="sr-only">(current)</span></a
+    <!-- nav bar-->
+    <nav class="navbar navbar-light bg-success">
+      <a class="navbar-brand">
+        <img
+          src="img\seedling-favicon.png"
+          width="30"
+          height="30"
+          class="d-inline-block align-top"
+          alt="seedling image"
+        />
+        Planting by Zones</a
+      >
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link text-white" href="index4.html"
+              >Home<span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link text-white"
+              href="img\hardiness-zone-map.jpeg"
+              target="_blank"
+              >Hardiness Zone Map</a
+            >
+            <div class="sr-only">Map depicting hardiness zones for USA</div>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link text-white"
+              href="https://leanneduyck.github.io/portfolio-website/index.html"
+              target="_blank"
+              >About</a
+            >
+          </li>
+          <nav class="navbar navbar-light bg-light">
+            <form class="form-inline" id="searchForm">
+              <input
+                class="form-control mr-sm-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+                id="searchInput"
+              />
+              <button
+                class="btn btn-outline-success my-2 my-sm-0"
+                type="submit"
               >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link text-white"
-                href="img\hardiness-zone-map.jpeg"
-                target="_blank"
-                >Hardiness Zone Map</a
-              >
-              <div class="sr-only">Map depicting hardiness zones for USA</div>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link text-white"
-                href="https://leanneduyck.github.io/portfolio-website/index.html"
-                target="_blank"
-                >About</a
-              >
-            </li>
-            <nav class="navbar navbar-light bg-light">
-              <form class="form-inline" id="searchForm">
-                <input
-                  class="form-control mr-sm-2"
-                  type="search"
-                  placeholder="Search"
-                  aria-label="Search"
-                  id="searchInput"
-                />
-                <button
-                  class="btn btn-outline-success my-2 my-sm-0"
-                  type="submit"
-                >
-                  Search
-                </button>
-              </form>
-            </nav>
-          </ul>
-        </div>
-      </nav>
-
-      <title>Planting by Zones</title>
-    </head>
-
+                Search
+              </button>
+            </form>
+          </nav>
+        </ul>
+      </div>
+    </nav>
     <body>
       <!-- Modal -->
       <div

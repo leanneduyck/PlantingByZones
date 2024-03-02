@@ -50,17 +50,21 @@ const init = (function () {
   // modal
   function showModal(response) {
     document.querySelector(".modal").classList.add("show");
-    const modalContent = document.querySelector(".modal-content");
+    const modalContent = document.querySelector(".modal-body");
     modalContent.innerHTML = "";
 
-    const title = document.createElement("h1");
-    title.textContent = `Hardiness Zone for zipcode: ${response.zipcode}`;
+    const title = document.createElement("h3");
+    title.style.color = "green";
+    title.textContent = `Hardiness Zone for zipcode: ${response.hardiness_zone}`;
 
     const img = document.createElement("img");
     img.src = `./img/Planting-Zone-${response.hardiness_zone.replaceAll(
       /\D/g,
       ""
     )}.webp`;
+
+    img.style.width = "100%";
+    img.style.height = "auto";
 
     modalContent.appendChild(title);
     modalContent.appendChild(img);
