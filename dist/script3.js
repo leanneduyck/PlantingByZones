@@ -55,7 +55,7 @@ const init = (function () {
 
     const title = document.createElement("h3");
     title.style.color = "green";
-    title.textContent = `Hardiness Zone for zipcode: ${response.hardiness_zone}`;
+    title.textContent = `The Hardiness Zone for your zipcode is: ${response.hardiness_zone}`;
 
     const img = document.createElement("img");
     img.src = `./img/Planting-Zone-${response.hardiness_zone.replaceAll(
