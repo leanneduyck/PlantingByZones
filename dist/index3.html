@@ -25,7 +25,7 @@
       />
 
       <!-- nav bar-->
-      <nav class="navbar navbar-expand-lg navbar-light bg-success">
+      <nav class="navbar navbar-light bg-success">
         <a class="navbar-brand">
           <img
             src="img\seedling-favicon.png"
@@ -129,8 +129,8 @@
       </div>
 
       <!-- normal HTML -->
-      <main class="p-5 container text-center">
-        <div class="row">
+      <main class="p-5 text-center">
+        <div class="justify-content-md-center">
           <h1>
             When you plant your garden depends on your <em>hardiness zone</em>!
           </h1>
@@ -139,18 +139,24 @@
             <em>hardiness zone</em>:
           </h4>
 
-          <!-- zipcode to hardiness API -->
+          <!-- zipcode to hardiness search/API -->
           <div class="mx-auto">
             <input id="zipcode" placeholder="zipcode" maxlength="5" />
             <button
               type="button"
-              class="btn btn-success"
+              class="btn btn-success loading-message"
               id="search"
               data-toggle="modal"
               data-target="#exampleModalCenter"
               disabled="true"
             >
               Search
+              <span
+                class="spinner-border spinner-border-sm d-none"
+                role="status"
+                aria-hidden="true"
+              ></span>
+              <span class="sr-only">Loading...</span>
             </button>
           </div>
           <div id="errorMessage"></div>
@@ -362,6 +368,7 @@
       </footer>
 
       <script src="script3.js"></script>
+      <link src="dist\linting.eslintrc" />
 
       <!-- Bootstrap JavaScript -->
       <script

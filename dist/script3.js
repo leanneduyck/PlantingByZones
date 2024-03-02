@@ -17,15 +17,23 @@ const init = (function () {
     }
   });
 
+  //zipcode entry, must be length 5
   document.getElementById("search").addEventListener("click", () => {
     const zipcodeValue = document.getElementById("zipcode").value;
+    const loadingSpinner = document.querySelector(".spinner-border");
     if (zipcodeValue.length === 5 && isValidZipcode(zipcodeValue)) {
+      // show loading spinner
+      loadingSpinner.classList.remove("d-none");
       getZoneByZipcode(zipcodeValue).then((response) => {
         if (response !== null) {
           showModal(response);
+          // hide loading spinner after modal is shown
+          loadingSpinner.classList.add("d-none");
           return;
         }
         displayErrorMessage();
+        // hide loading spinner on error
+        loadingSpinner.classList.add("d-none");
       });
     }
   });
@@ -33,12 +41,13 @@ const init = (function () {
   function displayErrorMessage() {
     document.getElementById("errorMessage").textContent = "Error fetching data";
 
-    //clears error mssage after 2 seconds
+    // clears error mssage after 2 seconds
     setTimeout(() => {
       document.getElementById("errorMessage").textContent = "";
     }, 2000);
   }
 
+  // modal
   function showModal(response) {
     document.querySelector(".modal").classList.add("show");
     const modalContent = document.querySelector(".modal-content");
@@ -65,6 +74,7 @@ const init = (function () {
       document.querySelector(".#exampleModalCenter").classList.remove("show");
     });
 
+  // API
   function getZoneByZipcode(zipcode) {
     return fetch(
       `https://plant-hardiness-zone.p.rapidapi.com/zipcodes/${zipcode}`,
