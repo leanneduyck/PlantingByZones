@@ -70,6 +70,10 @@ main {
   animation: ease-in-out 2s enter_left 1 forwards;
 }
 
+ul {
+  list-style-type: none;
+}
+
 .button {
   display: block;
   background-color: var(--light);
@@ -89,7 +93,6 @@ ul {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  list-style-type: none;
 }
 
 .button:hover {
@@ -103,67 +106,42 @@ h1 {
   color: var(--dark_alt);
 }
 
-.zone-image {
-  display: none;
-}
-
-/*modal styling*/
-
+/* modal */
 .modal {
-  display: none;
-  position: fixed;
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
   left: 0;
   top: 0;
-  width: 20%; /* Full width */
-  height: 20%; /* Full height */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  margin: auto;
-  display: inline-block;
-  box-sizing: border-box;
-  background: var(--dark);
-  color: white;
-  opacity: 0.8;
-  padding: 15px;
-  width: 100%;
-  max-width: 700px;
-  text-align: left;
-  border-radius: 4px;
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
-.modal-close {
+/* Modal Content/Box */
+.modal-body {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
   float: right;
-  border: 0;
-  background-color: var(--background);
-  color: var(--dark_alt);
+  font-size: 28px;
   font-weight: bold;
-  border-radius: 4px;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
   cursor: pointer;
-}
-
-.modal-close:hover {
-  opacity: var(--opacity);
-  text-decoration: underline;
-  cursor: pointer;
-  transition-duration: var(--transition-duration);
-}
-
-.modal-close:focus {
-  outline: none;
-}
-
-.modal-close:active {
-  color: var(--dark_orange);
-}
-
-.modal h1 {
-  margin-top: 0;
-  color: var(--background);
-}
-
-.modal p {
-  margin-bottom: 0;
-  color: white;
 }
 
 /*footer styling*/

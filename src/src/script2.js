@@ -8,14 +8,6 @@ const init = (function () {
     }
   });
 
-  document.getElementById("zipcode").addEventListener("keypress", (event) => {
-    const btn = document.getElementById("search");
-    if (event.key === "Enter") {
-      event.preventDefault();
-      btn.click();
-    }
-  });
-
   document.getElementById("search").addEventListener("click", () => {
     const zipcodeValue = document.getElementById("zipcode").value;
     if (zipcodeValue.length === 5 && isValidZipcode(zipcodeValue)) {
@@ -39,18 +31,25 @@ const init = (function () {
   }
 
   function showModal(response) {
-    document.querySelector("#modal-container").classList.add("show");
+    document.querySelector(".modal").classList.add("show");
     const modalContent = document.querySelector(".modal-content");
     modalContent.innerHTML = "";
 
-    const p = document.createElement("h1");
-    p.textContent = `${response.hardiness_zone}`;
+    const title = document.createElement("h1");
+    title.textContent = `Hardiness Zone for zipcode: ${response.zipcode}`;
 
-    modalContent.appendChild(p);
+    const img = document.createElement("img");
+    img.src = `./img/Planting-Zone-${response.hardiness_zone.replaceAll(
+      /\D/g,
+      ""
+    )}.webp`;
+
+    modalContent.appendChild(title);
+    modalContent.appendChild(img);
   }
 
   //listen for on click close
-  document.querySelector(".modal-close").addEventListener("click", () => {
+  document.querySelector(".close").addEventListener("click", () => {
     console.log("holaa");
     document.querySelector(".modal").classList.remove("show");
   });
@@ -78,12 +77,3 @@ const init = (function () {
     return false;
   }
 })();
-
-function toggleImage(imageId) {
-  var image = document.getElementById(imageId);
-  if (image.style.display === "none") {
-    image.style.display = "block";
-  } else {
-    image.style.display = "none";
-  }
-}

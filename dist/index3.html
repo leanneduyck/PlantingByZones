@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+  <div class="p-3 mb-2 bg-secondary text-white">
+    <head>
+      <!-- meta tags -->
+      <meta charset="utf-8" />
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no"
+      />
+
+      <!-- Bootstrap CSS -->
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous"
+      />
+
+      <!-- favicon -->
+      <link
+        rel="shortcut icon"
+        href="dist\img\seedling-favicon.png"
+        alt="seedling favicon"
+      />
+
+      <!-- nav bar-->
+      <nav class="navbar navbar-expand-lg navbar-light bg-success">
+        <a class="navbar-brand">
+          <img
+            src="img\seedling-favicon.png"
+            width="30"
+            height="30"
+            class="d-inline-block align-top"
+            alt="seedling image"
+          />
+          Planting by Zones</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link text-white" href="index4.html"
+                >Home<span class="sr-only">(current)</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link text-white"
+                href="img\hardiness-zone-map.jpeg"
+                target="_blank"
+                >Hardiness Zone Map</a
+              >
+              <div class="sr-only">Map depicting hardiness zones for USA</div>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link text-white"
+                href="https://leanneduyck.github.io/portfolio-website/index.html"
+                target="_blank"
+                >About</a
+              >
+            </li>
+            <nav class="navbar navbar-light bg-light">
+              <form class="form-inline" id="searchForm">
+                <input
+                  class="form-control mr-sm-2"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                  id="searchInput"
+                />
+                <button
+                  class="btn btn-outline-success my-2 my-sm-0"
+                  type="submit"
+                >
+                  Search
+                </button>
+              </form>
+            </nav>
+          </ul>
+        </div>
+      </nav>
+
+      <title>Planting by Zones</title>
+    </head>
+
+    <body>
+      <!-- Modal -->
+      <div
+        class="modal"
+        id="exampleModalCenter"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalCenterTitle">
+                Modal title
+              </h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+                Close
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="modal-content"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- normal HTML -->
+      <main class="p-5 container text-center">
+        <div class="row">
+          <h1>
+            When you plant your garden depends on your <em>hardiness zone</em>!
+          </h1>
+          <h4 class="mx-auto p-4">
+            Enter your <mark>zipcode</mark> to find your
+            <em>hardiness zone</em>:
+          </h4>
+
+          <!-- zipcode to hardiness API -->
+          <div class="mx-auto">
+            <input id="zipcode" placeholder="zipcode" maxlength="5" />
+            <button
+              type="button"
+              class="btn btn-success"
+              id="search"
+              data-toggle="modal"
+              data-target="#exampleModalCenter"
+              disabled="true"
+            >
+              Search
+            </button>
+          </div>
+          <div id="errorMessage"></div>
+        </div>
+
+        <!-- list for plant info -->
+        <div id="searchResults"></div>
+        <div id="content">
+          <div class="p-5 container">
+            <div class="row">
+              <div class="col-4">
+                <a
+                  href="https://www.gurneys.com/product/kentucky_wonder_pole_beans_"
+                  target="_blank"
+                  class="list-group-item list-group-item-action p-3 mb-2 bg-light text-success"
+                  >Beans</a
+                >
+              </div>
+              <div class="col-4">
+                <a
+                  href="https://www.gurneys.com/product/red-titan-hybrid-beet"
+                  target="_blank"
+                  class="list-group-item list-group-item-action p-3 mb-2 bg-light text-success"
+                  >Beets</a
+                >
+              </div>
+              <div class="col-4">
+                <a
+                  href="https://www.gurneys.com/product/gurneys-blue-ribbon-hybrid-broccoli"
+                  target="_blank"
+                  class="list-group-item list-group-item-action p-3 mb-2 bg-light text-success"
+                  >Broccoli</a
+                >
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-4">
+                <a
+                  href="https://www.gurneys.com/product/jade-cross-hybrid-sprouts-brussels"
+                  target="_blank"
+                  class="list-group-item list-group-item-action p-3 mb-2 bg-light text-success"
+                  >Brussel Sprouts</a
+                >
+              </div>
+              <div class="col-4">
+                <a
+                  href="https://www.gurneys.com/product/stonehead_hybrid_cabbage_"
+                  target="_blank"
+                  class="list-group-item list-group-item-action p-3 mb-2 bg-light text-success"
+                  >Cabbage</a
+                >
+              </div>
+              <div class="col-4">
+                <a
+                  href="https://www.gurneys.com/product/napoli-hybrid-carrot"
+                  target="_blank"
+                  class="list-group-item list-group-item-action p-3 mb-2 bg-light text-success"
+                  >Carrots</a
+                >
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-4">
+                <a
+                  href="https://www.gurneys.com/product/snow_crown_hybrid_cauliflower_"
+                  target="_blank"
+                  class="list-group-item list-group-item-action p-3 mb-2 bg-light text-success"
+                  >Cauliflower</a
+                >
+              </div>
+              <div class="col-4">
+                <a
+                  href="https://www.gurneys.com/product/simply-irresistible-sweet-corn"
+                  target="_blank"
+                  class="list-group-item list-group-item-action p-3 mb-2 bg-light text-success"
+                  >Corn</a
+                >
+              </div>
+              <div class="col-4">
+                <a
+                  href="https://www.gurneys.com/product/gurneys-perfect-pickle-hybrid-cucumber"
+                  target="_blank"
+                  class="list-group-item list-group-item-action p-3 mb-2 bg-light text-success"
+                  >Cucumber</a
+                >
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-4">
+                <a
+                  href="https://www.gurneys.com/product/gurneys_winter_wonderland_kale_mix"
+                  target="_blank"
+                  class="list-group-item list-group-item-action p-3 mb-2 bg-light text-success"
+                  >Kale</a
+                >
+              </div>
+              <div class="col-4">
+                <a
+                  href="https://www.gurneys.com/product/gurneys-premium-lettuce-blend"
+                  target="_blank"
+                  class="list-group-item list-group-item-action p-3 mb-2 bg-light text-success"
+                  >Lettuce</a
+                >
+              </div>
+              <div class="col-4">
+                <a
+                  href="https://www.gurneys.com/product/candy_hybrid_onion"
+                  target="_blank"
+                  class="list-group-item list-group-item-action p-3 mb-2 bg-light text-success"
+                  >Onions</a
+                >
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-4">
+                <a
+                  href="https://www.gurneys.com/product/sugar_ann_snap_pea__12_pound"
+                  target="_blank"
+                  class="list-group-item list-group-item-action p-3 mb-2 bg-light text-success"
+                  >Peas</a
+                >
+              </div>
+              <div class="col-4">
+                <a
+                  href="https://www.gurneys.com/product/sweet-pepper-triple-delight-mix"
+                  target="_blank"
+                  class="list-group-item list-group-item-action p-3 mb-2 bg-light text-success"
+                  >Peppers</a
+                >
+              </div>
+              <div class="col-4">
+                <a
+                  href="https://www.gurneys.com/product/acadia-hybrid-spinach"
+                  target="_blank"
+                  class="list-group-item list-group-item-action p-3 mb-2 bg-light text-success"
+                  >Spinach</a
+                >
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <a
+                  href="https://www.gurneys.com/product/black-bellota-hybrid-acorn"
+                  target="_blank"
+                  class="list-group-item list-group-item-action p-3 mb-2 bg-light text-success"
+                  >Squash</a
+                >
+              </div>
+              <div class="col-6">
+                <a
+                  href="https://www.gurneys.com/product/gurney-girls-best-vff-hybrid-tomato"
+                  target="_blank"
+                  class="list-group-item list-group-item-action p-3 mb-2 bg-light text-success"
+                  >Tomato</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer class="page-footer container text-center">
+        find me on:
+        <div class="row justify-content-center">
+          <div class="col-1">
+            <a href="https://github.com/leanneduyck" target="_blank">
+              <img
+                class="img-fluid"
+                src="img\github-icon.png"
+                alt="github icon"
+              />
+            </a>
+          </div>
+          <div class="col-1">
+            <a href="https://instagram.com/leanne_duyck/" target="_blank">
+              <img
+                class="img-fluid"
+                src="img\instagram-icon.png"
+                alt="instagram icon"
+              />
+            </a>
+          </div>
+          <div class="col-1">
+            <a
+              href="https://linkedin.com/in/leanne-duyck-14b8702ab/"
+              target="_blank"
+            >
+              <img
+                class="img-fluid"
+                src="img\linkedin-icon.png"
+                alt="linkedin icon"
+              />
+            </a>
+          </div>
+        </div>
+        <div>
+          <div>designed and developed by:</div>
+          <div>Leanne Duyck</div>
+          <container>
+            <row>
+              <img
+                class="col-1 img-fluid"
+                src="img\favicon.svg"
+                alt="plumtree image"
+              />
+            </row>
+          </container>
+        </div>
+      </footer>
+
+      <script src="script3.js"></script>
+
+      <!-- Bootstrap JavaScript -->
+      <script
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"
+      ></script>
+    </body>
+  </div>
+</html>
