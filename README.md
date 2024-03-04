@@ -3,5 +3,7 @@ Data is loaded from an API and enables viewing related data.
 
 html, js, bootstrap css
 
+js file is minified in the dist file, original js is in src file
+
 API:
 https://rapidapi.com/fireside-worldwide-fireside-worldwide-default/api/plant-hardiness-zone/
