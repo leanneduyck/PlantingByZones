@@ -4,6 +4,7 @@ Data is loaded from an API and enables viewing related data.
 <p>A user can enter a zipcode and the API will return the corresponding hardiness zone and its calendar for optimal planting times.</p>
 <p>The main page has links for more information regarding the plants listed in the calendar.</p>
 <p>There is also a simple navBar with a search bar and general hardiness zone map.</p>
+<p>The UI is built using Bootstrap.</p>
 <p>Techs Used:</p>
 <ul>
   <li>HTML</li>
