@@ -1,18 +1,23 @@
-A simple js-based app in which the user enters a zipcode and the correct hardiness zone is returned along with a corresponding chart for planting dates; webpage also has links to an external seed website for additional information on each plant.
-Data is loaded from an API and enables viewing related data.
-<p>This is an app build mostly using JS and a third party API.</p>
-<p>A user can enter a zipcode and the API will return the corresponding hardiness zone and its calendar for optimal planting times.</p>
-<p>The main page has links for more information regarding the plants listed in the calendar.</p>
-<p>There is also a simple navBar with a search bar and general hardiness zone map.</p>
-<p>The UI is built using Bootstrap.</p>
-<p>Techs Used:</p>
-<ul>
-  <li>HTML</li>
-  <li>JavaScript</li>
-  <li>Bootstrap</li>
-  <li>Third Party API</li>
-</ul>
+Overview:
+The Planting by Zones JS app offers users the ability to input a zipcode and receive the corresponding hardiness zone information along with a planting calendar. Users can also access links to external seed websites for more detailed information about specific plants listed in the calendar.
 
-<p>API: https://rapidapi.com/fireside-worldwide-fireside-worldwide-default/api/plant-hardiness-zone/</p>
+Key Features:
 
-<p>Website: https://leanneduyck.github.io/planting-by-zones-js/</p>
+1. Zipcode Input: Users can enter a zipcode to fetch the corresponding hardiness zone and planting calendar.
+2. Planting Calendar: Displays optimal planting times based on the fetched hardiness zone data.
+3. External Links: Provides links to external seed websites for more detailed plant information.
+4. NavBar: Includes a search bar for zipcode input and a general hardiness zone map for reference.
+5. Responsive UI: Built using Bootstrap for a mobile-friendly and responsive design.
+
+Data Source: third-party API
+https://rapidapi.com/fireside-worldwide-fireside-worldwide-default/api/plant-hardiness-zone/
+
+Website: https://leanneduyck.github.io/planting-by-zones-js/
+
+Technologies Used:
+
+1. HTML: Structure for the web application.
+2. JavaScript: Frontend logic for fetching data from the API and updating the UI.
+3. Bootstrap: UI framework for responsive design components and layout.
+4. Third-Party API: Utilizes the Plant Hardiness Zone API from RapidAPI.
+5. CSS: Styling to enhance the user interface and experience.
