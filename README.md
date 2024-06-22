@@ -12,7 +12,7 @@ Key Features:
 Data Source: third-party API
 https://rapidapi.com/fireside-worldwide-fireside-worldwide-default/api/plant-hardiness-zone/
 
-Website: https://leanneduyck.github.io/planting-by-zones-js/
+Website: https://planting-by-zones.vercel.app/
 
 Technologies Used:
 
