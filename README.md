@@ -21,3 +21,10 @@ Technologies Used:
 3. Bootstrap: UI framework for responsive design components and layout.
 4. Third-Party API: Utilizes the Plant Hardiness Zone API from RapidAPI.
 5. CSS: Styling to enhance the user interface and experience.
+6. ESLint: JavaScript code formatting and linting.
+7. Prettier: Tool for code formatting.
+8. Modal: Complex UI pattern for displaying details.
+9. Search Functionality: Feature for searching items.
+10. Cross-Browser Compatibility: Ensures the app works in Chrome, Firefox, Safari, Edge, and Internet Explorer 11.
+11. Deployment: Deployed via GitHub Pages.
+
