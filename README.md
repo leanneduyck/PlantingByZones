@@ -1,5 +1,5 @@
 Overview:
-The Planting by Zones JS app offers users the ability to input a zipcode and receive the corresponding hardiness zone information along with a planting calendar. Users can also access links to external seed websites for more detailed information about specific plants listed in the calendar.
+The Planting by Zones app allows users to discover their local hardiness zone and access a tailored planting calendar by entering a zipcode. Using HTML for structure and JavaScript for frontend functionality, the app integrates a third-party API to fetch and display zone-specific information. The responsive UI is built with CSS and Bootstrap.
 
 Key Features:
 
