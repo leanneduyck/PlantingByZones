@@ -1,5 +1,5 @@
 Overview:
-The Planting by Zones JS app offers users the ability to input a zipcode and receive the corresponding hardiness zone information along with a planting calendar. Users can also access links to external seed websites for more detailed information about specific plants listed in the calendar.
+The Planting by Zones app allows users to discover their local hardiness zone and access a tailored planting calendar by entering a zipcode. Using HTML for structure and JavaScript for frontend functionality, the app integrates a third-party API to fetch and display zone-specific information. The responsive UI is built with CSS and Bootstrap.
 
 Key Features:
 
@@ -21,3 +21,10 @@ Technologies Used:
 3. Bootstrap: UI framework for responsive design components and layout.
 4. Third-Party API: Utilizes the Plant Hardiness Zone API from RapidAPI.
 5. CSS: Styling to enhance the user interface and experience.
+6. ESLint: JavaScript code formatting and linting.
+7. Prettier: Tool for code formatting.
+8. Modal: Complex UI pattern for displaying details.
+9. Search Functionality: Feature for searching items.
+10. Cross-Browser Compatibility: Ensures the app works in Chrome, Firefox, Safari, Edge, and Internet Explorer 11.
+11. Deployment: Deployed via GitHub Pages.
+
