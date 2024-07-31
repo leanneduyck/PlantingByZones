@@ -28,3 +28,27 @@ Technologies Used:
 10. Cross-Browser Compatibility: Ensures the app works in Chrome, Firefox, Safari, Edge, and Internet Explorer 11.
 11. Deployment: Deployed via GitHub Pages.
 
+Setup Instructions:
+
+1. Install Node.js and npm, if not already installed.
+2. Clone this repository by running: git clone https://github.come/leanneduyck/planting-by-zones.git, then run: cd planting-by-zones
+3. Install dependencies by running: npm install
+4. Integrate the API
+   a. Sign up in https://rapidapi.com/
+   b. Obtain an API key
+   c. In .env file, add API_KEY
+5. Start local development server by running: npm start
+6. Build the app by running: npm run build
+
+Github: To create new repo:
+
+From project directory in terminal run: git init
+Run git commit -m "first commit"
+Run git branch -M main
+From GH page, go through process of adding new repo, then use https it gives and run: git remote add origin https://github.com/leanneduyck/chat.git
+git push -u origin main
+To push:
+
+Run: git add .
+Run: git commit -m "Your commit message"
+Run: git push
